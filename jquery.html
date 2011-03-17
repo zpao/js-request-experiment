@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <title>AJAX experiments - jQuery</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script src="data.js"></script>
+  <script>
+    function doStuff() {
+      $.ajax({
+        url: "http://playground.zpao.com/jetpack/request/getpost.php",
+        data: requestData[0],
+        success: function(data) {
+          showResponse(0, data, this.url);
+        }
+      });
+  
+      $.ajax({
+        url: "http://playground.zpao.com/jetpack/request/getpost.php",
+        data: requestData[1],
+        success: function(data) {
+          showResponse(1, data, this.url);
+        }
+      });
+    
+      $.ajax({
+        url: "http://playground.zpao.com/jetpack/request/getpost.php",
+        data: requestData[2],
+        success: function(data) {
+          showResponse(2, data, this.url);
+        }
+      });
+      
+      $.ajax({
+        url: "http://playground.zpao.com/jetpack/request/getpost.php",
+        data: requestData[3],
+        success: function(data) {
+          showResponse(3, data, this.url);
+        }
+      });
+    }
+  </script>
+</head>
+<body onload="setup();doStuff();">
+  <h1>AJAX Experiments - jQuery</h1>
+  <div id="allofit"></div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <title>AJAX experiments - Dojo</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.4.3/dojo/dojo.xd.js"></script>
+  <script src="data.js"></script>
+  <script>
+    function doStuff() {
+      dojo.xhrGet({
+        url: "http://playground.zpao.com/jetpack/request/getpost.php",
+        content: requestData[0],
+        handle: function(data, obj) {
+          showResponse(0, data, obj.url);
+        }
+      });
+    
+      dojo.xhrGet({
+        url: "http://playground.zpao.com/jetpack/request/getpost.php",
+        content: requestData[1],
+        handle: function(data, obj) {
+          showResponse(1, data, obj.url);
+        }
+      });
+    
+      dojo.xhrGet({
+        url: "http://playground.zpao.com/jetpack/request/getpost.php",
+        content: requestData[2],
+        handle: function(data, obj) {
+          showResponse(2, data, obj.url);
+        }
+      });
+      
+      dojo.xhrGet({
+        url: "http://playground.zpao.com/jetpack/request/getpost.php",
+        content: requestData[3],
+        handle: function(data, obj) {
+          showResponse(3, data, obj.url);
+        }
+      });
+    }
+  </script>
+</head>
+<body onload="setup();doStuff();">
+  <h1>AJAX Experiments - Dojo</h1>
+  <div id="allofit"></div>
+</body>
+</html>

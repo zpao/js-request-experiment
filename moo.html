@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+  <title>AJAX experiments - MooTools</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.4/mootools-yui-compressed.js"></script>
+  <script src="data.js"></script>
+  <script>
+    function doStuff() {
+      new Request({
+        url: "http://playground.zpao.com/jetpack/request/getpost.php",
+        method: "get",
+        data: (new Hash(requestData[0])).toQueryString(),
+        onSuccess: function(text, xml) {
+          showResponse(0, text, this.options.url + "?" + this.options.data);
+        }
+      }).send();
+
+      new Request({
+        url: "http://playground.zpao.com/jetpack/request/getpost.php",
+        method: "get",
+        data: (new Hash(requestData[1])).toQueryString(),
+        onSuccess: function(text, xml) {
+          showResponse(1, text, this.options.url + "?" + this.options.data);
+        }
+      }).send();
+    
+      new Request({
+        url: "http://playground.zpao.com/jetpack/request/getpost.php",
+        method: "get",
+        data: (new Hash(requestData[2])).toQueryString(),
+        onSuccess: function(text, xml) {
+          showResponse(2, text, this.options.url + "?" + this.options.data);
+        }
+      }).send();
+      
+      new Request({
+        url: "http://playground.zpao.com/jetpack/request/getpost.php",
+        method: "get",
+        data: (new Hash(requestData[3])).toQueryString(),
+        onSuccess: function(text, xml) {
+          showResponse(3, text, this.options.url + "?" + this.options.data);
+        }
+      }).send();
+    }
+  </script>
+</head>
+<body onload="setup();doStuff();">
+  <h1>AJAX Experiments - MooTools</h1>
+  <div id="allofit"></div>
+</body>
+</html>

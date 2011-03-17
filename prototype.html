@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <title>AJAX experiments - Prototype</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.1.0/prototype.js"></script>
+  <script src="data.js"></script>
+  <script>
+    function doStuff() {
+      new Ajax.Request("http://playground.zpao.com/jetpack/request/getpost.php", {
+        method: "get",
+        parameters: requestData[0],
+        onSuccess: function(response) {
+          showResponse(0, response.responseText, response.request.url);
+        }
+      });
+
+      new Ajax.Request("http://playground.zpao.com/jetpack/request/getpost.php", {
+        method: "get",
+        parameters: requestData[1],
+        onSuccess: function(response) {
+          showResponse(1, response.responseText, response.request.url);
+        }
+      });
+
+      new Ajax.Request("http://playground.zpao.com/jetpack/request/getpost.php", {
+        method: "get",
+        parameters: requestData[2],
+        onSuccess: function(response) {
+          showResponse(2, response.responseText, response.request.url);
+        }
+      });
+      
+      new Ajax.Request("http://playground.zpao.com/jetpack/request/getpost.php", {
+        method: "get",
+        parameters: requestData[3],
+        onSuccess: function(response) {
+          showResponse(3, response.responseText, response.request.url);
+        }
+      });
+    }
+  </script>
+</head>
+<body onload="setup();doStuff();">
+  <h1>AJAX Experiments - Prototype</h1>
+  <div id="allofit"></div>
+</body>
+</html>
